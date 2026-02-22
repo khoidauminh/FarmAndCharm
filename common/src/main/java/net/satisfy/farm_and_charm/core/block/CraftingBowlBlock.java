@@ -126,7 +126,7 @@ public class CraftingBowlBlock extends BaseEntityBlock {
             }
         }
 
-        if (!anyHeld) {
+        if (!anyHeld || (anyHeld && !bowl.canAddItem())) {
             if (stirred >= STIRS_NEEDED && stirring == 0) {
                 ItemStack out = bowl.getItem(4);
                 if (!out.isEmpty()) {
